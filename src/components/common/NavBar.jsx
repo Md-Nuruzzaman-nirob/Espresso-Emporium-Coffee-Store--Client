@@ -8,6 +8,7 @@ const NavBar = () => {
       style={{
         backgroundImage: `url(${bg})`,
       }}
+      className="text-[#FFF]"
     >
       <Link to={"/"} className="flex justify-center items-center py-3">
         <img

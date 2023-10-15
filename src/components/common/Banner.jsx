@@ -17,12 +17,12 @@ const Banner = () => {
           <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl text-white">
             Would you like a Cup of Delicious Coffee?
           </h1>
-          <p className="2xl:w-11/12 text-[8px] md:text-[10px] lg:text-sm 2xl:text-base font-Raleway mt-2 md:mt-4 mb-3 md:mb-5 xl:mb-8">
+          <p className="2xl:w-11/12 text-[#FFF] text-[8px] md:text-[10px] lg:text-sm 2xl:text-base font-Raleway mt-2 md:mt-4 mb-3 md:mb-5 xl:mb-8">
             It&apos;s coffee time - Sip & Savor - Relaxation in every sip! Get
             the nostalgia back!! Your companion of every moment!!! Enjoy the
             beautiful moments and make them memorable.
           </p>
-          <button className="btn btn-sm lg:btn-md bg-[#E3B577] text-xs lg:text-base text-[#242222] hover:bg-transparent hover:text-white hover:border-white rounded-full">
+          <button className="btn btn-sm lg:btn-md bg-[#E3B577] text-xs lg:text-base text-[#331A15] hover:bg-transparent hover:text-white hover:border-white border-2 border-transparent rounded-full">
             Learn More
           </button>
         </div>
