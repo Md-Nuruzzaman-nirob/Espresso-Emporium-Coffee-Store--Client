@@ -14,7 +14,6 @@ const NewCoffeeAddingPage = () => {
 
   const { id } = useParams();
   const data = useLoaderData();
-  //   console.log(data);
 
   const result = data.find((singleData) => singleData._id === id);
 
