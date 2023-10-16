@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../components/layout/Root";
-import Home from "../components/pages/home/Home";
-import NewCoffeeAddingPage from "../components/pages/newCoffeeAddingPage/NewCoffeeAddingPage";
-import CoffeeDetails from "../components/pages/details/CoffeeDetails";
-import CoffeeUpdate from "../components/pages/update/CoffeeUpdate";
+import Home from "../components/pages/homePage/Home";
+import NewCoffeeAddingPage from "../components/pages/addPage/NewCoffeeAddingPage";
+import CoffeeDetails from "../components/pages/detailsPage/CoffeeDetails";
+import CoffeeUpdate from "../components/pages/updatePage/CoffeeUpdate";
 
 const myAppRouter = createBrowserRouter([
   {

@@ -10,11 +10,10 @@ const ProductsCard = ({ card }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { name, chef, photo, _id } = card || {};
-  console.log(photo);
 
   const handleDelete = (id) => {
     Swal.fire({
-      title: "Are you want to delete this?",
+      title: "Are you sure that you want to delete it?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -36,42 +35,49 @@ const ProductsCard = ({ card }) => {
     });
   };
   return (
-    <div className="bg-[#F5F4F1] flex items-center justify-around rounded-xl font-Raleway">
-      <div className="w-[200px] h-[250px] my-7">
+    <div className="bg-[#F5F4F1] flex items-center justify-between rounded-xl font-Raleway p-3 md:p-5 xl:p-8">
+      <div className="w-28 h-36 md:w-40 md:h-48 xl:w-[200px] xl:h-[250px]">
         {photo !== "" ? (
           <img className="" src={photo} alt="" />
         ) : (
-          <p className="h-full flex flex-col items-center justify-center font-Rancho text-2xl">
+          <p className="w-28 md:w-40 h-full md:h-full flex flex-col items-center justify-center font-Rancho text-2xl">
             <VscEmptyWindow></VscEmptyWindow>
             empty photo
           </p>
         )}
       </div>
-      <div className="text-xl font-bold">
+      <div className="text-sm md:text-base xl:text-xl font-bold">
         <h3>
-          Name : <span className="font-semibold text-[#5C5B5B]">{name}</span>
+          Name :{" "}
+          <span className="text-xs md:text-base xl:text-xl font-semibold text-[#5C5B5B]">
+            {name}
+          </span>
         </h3>
         <h3 className="my-2">
-          Chef : <span className="font-semibold text-[#5C5B5B]">{chef}</span>
+          Chef :{" "}
+          <span className="text-xs md:text-base xl:text-xl font-semibold text-[#5C5B5B]">
+            {chef}
+          </span>
         </h3>
         <h3>
-          Price : <span className="font-semibold text-[#5C5B5B]"></span>
+          Price :{" "}
+          <span className="text-xs md:text-base xl:text-xl font-semibold text-[#5C5B5B]"></span>
         </h3>
       </div>
       <div className="flex flex-col">
         <Link to={`/coffedetails/${_id}`} state={location.pathname}>
-          <button className="btn btn-sm lg:btn-md bg-[#E3B577] text-xs lg:text-base text-white hover:text-[#331A15] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] rounded-full">
+          <button className="btn btn-sm xl:btn-md bg-[#E3B577] text-xs lg:text-base text-white hover:text-[#331A15] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] rounded-full">
             <AiFillEye></AiFillEye>
           </button>
         </Link>
         <Link to={`/coffeupdate/${_id}`} state={location.pathname}>
-          <button className="btn btn-sm lg:btn-md bg-black text-xs lg:text-base text-white hover:text-[#331A15] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] my-4 rounded-full">
+          <button className="btn btn-sm xl:btn-md bg-black text-xs lg:text-base text-white hover:text-[#331A15] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] my-4 rounded-full">
             <BsPencil></BsPencil>
           </button>
         </Link>
         <button
           onClick={() => handleDelete(_id)}
-          className="btn bg-red-600 text-xs lg:text-base text-white hover:text-[#331A15] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] rounded-full"
+          className="btn btn-sm xl:btn-md bg-red-600 text-xs lg:text-base text-white hover:text-[#331A15] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] rounded-full"
         >
           <AiTwotoneDelete></AiTwotoneDelete>
         </button>

@@ -9,7 +9,7 @@ import img8 from "../../../assets/cups/Rectangle 9.png";
 
 const SocialSection = () => {
   return (
-    <div className="max-w-7xl mx-auto mb-28">
+    <div className="max-w-7xl mx-auto mb-28 px-4 md:px-10">
       <div className="text-center font-Rancho mb-12">
         <p className="text-xl text-black font-Raleway">--- Sip & Savor ---</p>
         <h3
@@ -21,15 +21,15 @@ const SocialSection = () => {
           Follow on Instagram
         </h3>
       </div>
-      <div className="grid grid-cols-4 gap-6">
-        <img src={img1} alt="" />
-        <img src={img2} alt="" />
-        <img src={img3} alt="" />
-        <img src={img4} alt="" />
-        <img src={img5} alt="" />
-        <img src={img6} alt="" />
-        <img src={img7} alt="" />
-        <img src={img8} alt="" />
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+        <img className="rounded-3xl" src={img1} alt="" />
+        <img className="rounded-3xl" src={img2} alt="" />
+        <img className="rounded-3xl" src={img3} alt="" />
+        <img className="rounded-3xl" src={img4} alt="" />
+        <img className="rounded-3xl" src={img5} alt="" />
+        <img className="rounded-3xl" src={img6} alt="" />
+        <img className="rounded-3xl" src={img7} alt="" />
+        <img className="rounded-3xl" src={img8} alt="" />
       </div>
     </div>
   );

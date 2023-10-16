@@ -11,7 +11,6 @@ import { BsBoxArrowLeft } from "react-icons/bs";
 const CoffeeDetails = () => {
   const { id } = useParams();
   const data = useLoaderData();
-  //   console.log(data);
 
   const result = data.find((singleData) => singleData._id === id);
   const { name, chef, supplier, taste, category, details, photo } =
@@ -32,7 +31,7 @@ const CoffeeDetails = () => {
         backgroundRepeat: " no-repeat",
       }}
     >
-      <div className="max-w-7xl mx-auto pt-12 pb-12">
+      <div className="max-w-7xl xl:mx-auto pt-12 pb-12 mx-4 md:mx-10">
         <button
           style={{
             textShadow: "2px 2px 4px rgba(51, 26, 21)",
@@ -44,21 +43,20 @@ const CoffeeDetails = () => {
           Back
         </button>
       </div>
-      <div className="max-w-7xl mx-auto bg-[#F5F4F1] flex items-center rounded-xl font-Raleway mb-28">
-        <div className="flex-1 w-[350px] h-[450px] my-[70]">
-          {photo ? (
-            <img
-              className=" flex flex-col items-center justify-center"
-              src={photo}
-              alt=""
-            />
-          ) : (
-            <p className="h-full flex flex-col items-center justify-center font-Rancho text-2xl">
+      <div className="max-w-7xl xl:mx-auto mx-4 md:mx-10 bg-[#F5F4F1] flex items-center rounded-xl font-Raleway mb-28">
+        {photo ? (
+          <div className="flex-1 w-[350px] h-[450px] flex flex-col items-center justify-center my-[70] ">
+            <img className=" " src={photo} alt="" />
+          </div>
+        ) : (
+          <div className="flex-1 w-[350px] h-[450px] my-[70] flex flex-col items-center justify-center">
+            <p className="font-Rancho text-2xl">
               <VscEmptyWindow></VscEmptyWindow>
               empty photo
             </p>
-          )}
-        </div>
+          </div>
+        )}
+
         <div className="flex-1 text-xl font-bold">
           <h3>
             Name : <span className="font-semibold text-[#5C5B5B]">{name}</span>

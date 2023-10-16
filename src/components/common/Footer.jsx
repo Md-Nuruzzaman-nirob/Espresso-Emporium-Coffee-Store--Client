@@ -19,7 +19,7 @@ const Footer = () => {
         backgroundRepeat: " no-repeat",
       }}
     >
-      <div className="font-Raleway max-w-7xl mx-auto flex justify-center items-center gap-10 pt-28 pb-12 ">
+      <div className="font-Raleway max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-10 pt-28 pb-12 px-4 md:px-10 font-medium">
         <div className="flex-1 text-[#1B1A1A]">
           <img className="w-[75px] h-[90px]" src={logo} alt="" />
           <h3

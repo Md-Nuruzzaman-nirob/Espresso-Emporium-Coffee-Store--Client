@@ -7,10 +7,6 @@ const Products = () => {
   const coffees = useLoaderData();
   const location = useLocation();
 
-  // const handleFilter = (_id) => {
-  //   const remaining = coffees.filter((remaining) => remaining._id !== _id);
-  //   return remaining;
-  // };
   return (
     <div
       style={{
@@ -42,7 +38,7 @@ const Products = () => {
           </button>
         </Link>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-2 gap-6 mt-12">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 mt-12 px-4 md:px-10">
         {coffees.map((card) => (
           <ProductsCard key={card._id} card={card}></ProductsCard>
         ))}

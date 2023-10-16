@@ -1,4 +1,9 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {
+  useLoaderData,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { BsBoxArrowLeft } from "react-icons/bs";
 import bg from "../../../assets/more/11.png";
 import toast from "react-hot-toast";
@@ -6,6 +11,16 @@ import toast from "react-hot-toast";
 const NewCoffeeAddingPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const { id } = useParams();
+  const data = useLoaderData();
+  //   console.log(data);
+
+  const result = data.find((singleData) => singleData._id === id);
+
+  const { name, chef, supplier, taste, category, details, photo } =
+    result || {};
+
   const handleGoBack = () => {
     navigate(location?.state ? location.state : "/");
   };
@@ -23,17 +38,19 @@ const NewCoffeeAddingPage = () => {
     const newCoffee = { name, chef, supplier, taste, category, details, photo };
 
     // sending to backEnd
-    fetch("http://localhost:5000/coffee", {
-      method: "POST",
+    fetch(`http://localhost:5000/coffee/${id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(newCoffee),
     })
       .then((res) => res.json())
-      .then(() => {
-        toast.success("Coffee added Successfully");
-        handleGoBack();
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Updated Successfully");
+          handleGoBack();
+        }
       });
   };
   return (
@@ -46,7 +63,7 @@ const NewCoffeeAddingPage = () => {
       }}
       className="font-Raleway"
     >
-      <div className="max-w-7xl mx-auto pt-12 pb-12">
+      <div className="max-w-7xl xl:mx-auto mx-4 md:mx-10 pt-12 pb-12">
         <button
           style={{
             textShadow: "2px 2px 4px rgba(51, 26, 21)",
@@ -58,14 +75,14 @@ const NewCoffeeAddingPage = () => {
           Back
         </button>
       </div>
-      <div className="max-w-7xl mx-auto px-28 py-20 bg-[#F4F3F0] mb-28 rounded-3xl">
+      <div className="max-w-7xl xl:mx-auto mx-4 md:mx-10 px-28 py-20 bg-[#F4F3F0] mb-28 rounded-3xl">
         <h3
           style={{
             textShadow: "2px 2px 4px rgba(51, 26, 21)",
           }}
           className="font-Rancho text-5xl text-center"
         >
-          Add New Coffee
+          Update Existing Coffee Details
         </h3>
         <p className="text-center text-lg font-medium mx-20 my-8">
           It is a long established fact that a reader will be distracted by the
@@ -84,6 +101,7 @@ const NewCoffeeAddingPage = () => {
                 Name
               </label>
               <input
+                defaultValue={name}
                 type="text"
                 id="name"
                 name="name"
@@ -101,6 +119,7 @@ const NewCoffeeAddingPage = () => {
                 Chef
               </label>
               <input
+                defaultValue={chef}
                 type="text"
                 id="chef"
                 name="chef"
@@ -120,6 +139,7 @@ const NewCoffeeAddingPage = () => {
                 Supplier
               </label>
               <input
+                defaultValue={supplier}
                 type="text"
                 id="supplier"
                 name="supplier"
@@ -137,6 +157,7 @@ const NewCoffeeAddingPage = () => {
                 Taste
               </label>
               <input
+                defaultValue={taste}
                 type="text"
                 id="taste"
                 name="taste"
@@ -155,6 +176,7 @@ const NewCoffeeAddingPage = () => {
                 Category
               </label>
               <input
+                defaultValue={category}
                 type="text"
                 id="category"
                 name="category"
@@ -172,6 +194,7 @@ const NewCoffeeAddingPage = () => {
                 Details
               </label>
               <input
+                defaultValue={details}
                 type="text"
                 id="details"
                 name="details"
@@ -189,6 +212,7 @@ const NewCoffeeAddingPage = () => {
               Photo
             </label>
             <input
+              defaultValue={photo}
               type="text"
               id="photo"
               name="photo"
@@ -204,7 +228,7 @@ const NewCoffeeAddingPage = () => {
             }}
             className=" w-full btn bg-[#E3B577] text-xs lg:text-base text-white hover:text-[#331A15] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] rounded-full font-Rancho"
           >
-            Add Coffee
+            Update Coffee Details
           </button>
         </form>
       </div>
