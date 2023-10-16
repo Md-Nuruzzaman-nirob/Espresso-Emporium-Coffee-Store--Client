@@ -21,9 +21,12 @@ const ProductsCard = ({ card }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coffee/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://espresso-emporium-n0w8l8r8p-md-nuruzzaman-nirob.vercel.app/coffee/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -38,9 +41,13 @@ const ProductsCard = ({ card }) => {
     <div className="bg-[#F5F4F1] flex items-center justify-between rounded-xl font-Raleway p-3 md:p-5 xl:p-8">
       <div className="w-28 h-36 md:w-40 md:h-48 xl:w-[200px] xl:h-[250px]">
         {photo !== "" ? (
-          <img className="" src={photo} alt="" />
+          <img
+            className="w-28 h-36 md:w-40 md:h-48 xl:w-[200px] xl:h-[250px]"
+            src={photo}
+            alt=""
+          />
         ) : (
-          <p className="w-28 md:w-40 h-full md:h-full flex flex-col items-center justify-center font-Rancho text-2xl">
+          <p className="w-28 md:w-40 h-full flex flex-col items-center justify-center font-Rancho text-2xl">
             <VscEmptyWindow></VscEmptyWindow>
             empty photo
           </p>

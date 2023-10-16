@@ -19,32 +19,32 @@ const Footer = () => {
         backgroundRepeat: " no-repeat",
       }}
     >
-      <div className="font-Raleway max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-10 pt-28 pb-12 px-4 md:px-10 font-medium">
+      <div className="font-Raleway max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-10 pt-12 md:pt-20 lg:pt-28 pb-12 px-4 md:px-10 font-medium">
         <div className="flex-1 text-[#1B1A1A]">
           <img className="w-[75px] h-[90px]" src={logo} alt="" />
           <h3
             style={{
               textShadow: "2px 2px 4px rgba(51, 26, 21)",
             }}
-            className="text-5xl text-[#331A15] font-Rancho mt-6 mb-8"
+            className="text-4xl md:text-5xl text-[#331A15] font-Rancho mt-6 mb-8"
           >
             Espresso Emporium
           </h3>
-          <p className="text-xl">
+          <p className="text-sm md:text-base lg:text-lg font-semibold">
             Always ready to be your friend. Come & Contact with us to share your
             memorable moments, to share with your best companion.
           </p>
-          <div className="flex items-center gap-5 my-8">
-            <img className="w-10 h-10" src={icon1} alt="" />
-            <img className="w-10 h-10" src={icon2} alt="" />
-            <img className="w-10 h-10" src={icon3} alt="" />
-            <img className="w-10 h-10" src={icon4} alt="" />
+          <div className="flex items-center gap-4 mt-4 mb-8">
+            <img className="w-6 h-6" src={icon1} alt="" />
+            <img className="w-6 h-6" src={icon2} alt="" />
+            <img className="w-6 h-6" src={icon3} alt="" />
+            <img className="w-6 h-6" src={icon4} alt="" />
           </div>
           <h3
             style={{
               textShadow: "2px 2px 4px rgba(51, 26, 21)",
             }}
-            className="text-5xl text-[#331A15] font-Rancho mb-8"
+            className="text-4xl md:text-5xl text-[#331A15] font-Rancho mb-8"
           >
             Get in Touch
           </h3>
@@ -68,7 +68,7 @@ const Footer = () => {
             style={{
               textShadow: "2px 2px 4px rgba(51, 26, 21)",
             }}
-            className="text-5xl text-[#331A15] font-Rancho mb-8"
+            className="text-4xl md:text-5xl text-[#331A15] font-Rancho mb-8"
           >
             Connect with Us
           </h3>

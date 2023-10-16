@@ -38,13 +38,16 @@ const NewCoffeeAddingPage = () => {
     const newCoffee = { name, chef, supplier, taste, category, details, photo };
 
     // sending to backEnd
-    fetch(`http://localhost:5000/coffee/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCoffee),
-    })
+    fetch(
+      `https://espresso-emporium-n0w8l8r8p-md-nuruzzaman-nirob.vercel.app/coffee/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newCoffee),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -63,28 +66,28 @@ const NewCoffeeAddingPage = () => {
       }}
       className="font-Raleway"
     >
-      <div className="max-w-7xl xl:mx-auto mx-4 md:mx-10 pt-12 pb-12">
+      <div className="max-w-7xl mx-4 md:mx-10 xl:mx-auto text-right lg:text-left py-8 md:py-12">
         <button
           style={{
             textShadow: "2px 2px 4px rgba(51, 26, 21)",
           }}
           onClick={handleGoBack}
-          className="btn btn-sm bg-[#E3B577] text-xs lg:text-base text-white hover:text-[#331A15] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] rounded-full font-Rancho px-6"
+          className="btn btn-sm lg:btn-md text-xs lg:text-base text-white hover:text-[#331A15] bg-[#E3B577] hover:bg-[#F5F4F1] border-2 border-transparent hover:border-[#331A15] rounded-full font-Rancho px-6 lg:px-10"
         >
           <BsBoxArrowLeft />
           Back
         </button>
       </div>
-      <div className="max-w-7xl xl:mx-auto mx-4 md:mx-10 px-28 py-20 bg-[#F4F3F0] mb-28 rounded-3xl">
+      <div className="max-w-7xl mx-4 md:mx-10 xl:mx-auto px-4 md:px-10 lg:px-16 xl:px-28 py-10 md:py-16 lg:py-20 bg-[#F4F3F0] mb-16 md:mb-20 lg:mb-28 rounded-3xl">
         <h3
           style={{
             textShadow: "2px 2px 4px rgba(51, 26, 21)",
           }}
-          className="font-Rancho text-5xl text-center"
+          className="font-Rancho text-3xl md:text-5xl text-center"
         >
           Update Existing Coffee Details
         </h3>
-        <p className="text-center text-lg font-medium mx-20 my-8">
+        <p className="text-center text-xs md:text-sm lg:text-base xl:text-lg font-semibold md:mx-6 lg:mx-10 xl:mx-20 my-5 md:my-8">
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of

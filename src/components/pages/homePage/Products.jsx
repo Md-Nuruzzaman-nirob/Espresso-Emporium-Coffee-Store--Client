@@ -23,7 +23,7 @@ const Products = () => {
           style={{
             textShadow: "2px 2px 4px rgba(51, 26, 21)",
           }}
-          className="text-5xl text-[#331A15] mt-2 mb-4"
+          className="text-4xl md:text-5xl text-[#331A15] mt-2 mb-4"
         >
           Our Popular Products
         </h3>
